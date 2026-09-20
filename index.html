@@ -620,6 +620,15 @@ main{width:auto!important;max-width:none!important;min-width:0!important;}
 }
 </style>
 
+
+<style>
+.doc-link-card{text-decoration:none;color:inherit;display:block;cursor:pointer}
+.doc-link-card .go{display:inline-block;margin-top:8px;font-weight:800;color:#5b21b6}
+.meeting-docs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.meeting-docs-grid .card{min-height:100%;}
+.meeting-docs-grid .card a{display:inline-block;margin:6px 0 10px;font-weight:800;text-decoration:none;color:#5b21b6}
+@media(max-width:700px){.meeting-docs-grid{grid-template-columns:1fr}.meeting-docs-grid .card{padding:18px}.meeting-docs-grid .card a{font-size:14px}.doc-link-card{touch-action:manipulation}}
+</style>
 </head>
 <body>
 <div class="app">
@@ -814,15 +823,15 @@ main{width:auto!important;max-width:none!important;min-width:0!important;}
 <a class="phone-back-dashboard-static" href="#dashboard" aria-label="Kembali ke Dashboard">🏠 KEMBALI KE DASHBOARD</a>
 </section>
 
-<section id="dokumen" class="page"><div class="section-title"><h3>📂 Dokumentasi Panitia</h3><span>Dokumen rasmi panitia</span></div><div class="cards"><div class="card"><h4>📋 Mesyuarat</h4><p>Minit dan bahan mesyuarat.</p></div><div class="card"><h4>📸 Gambar Aktiviti</h4><p>Dokumentasi bergambar.</p></div><div class="card"><h4>📄 Laporan</h4><p>Laporan program dan aktiviti.</p></div><div class="card"><h4>📁 PBD / Peperiksaan</h4><p>Fail dokumentasi akademik.</p></div><div class="card"><h4>📝 Kertas Kerja</h4><p>Kertas kerja program dan aktiviti panitia.</p><a href="https://drive.google.com/file/d/1jQfZXRotPNJM19C52itEbmwvDMypWbOU/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Buka dokumen →</a></div><div class="card"><h4>📅 Jadual Instruksional SMKBM 2026</h4><p>Jadual instruksional SMK Bukit Merchu 2026.</p><a href="https://drive.google.com/file/d/1E500MbLm6qSx3Juj-O2GbclDpsj02fLT/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Buka dokumen →</a></div></div>
+<section id="dokumen" class="page"><div class="section-title"><h3>📂 Dokumentasi Panitia</h3><span>Dokumen rasmi panitia</span></div><div class="cards"><a class="card doc-link-card" href="#mesyuarat" onclick="showPage('mesyuarat',this); return false;"><h4>📋 Mesyuarat Panitia</h4><p>Surat jemputan dan minit mesyuarat Panitia RBT Bil. 1 &amp; Bil. 2 Tahun 2026.</p><span class="go">Buka Mesyuarat →</span></a><div class="card"><h4>📸 Gambar Aktiviti</h4><p>Dokumentasi bergambar.</p></div><div class="card"><h4>📄 Laporan</h4><p>Laporan program dan aktiviti.</p></div><div class="card"><h4>📁 PBD / Peperiksaan</h4><p>Fail dokumentasi akademik.</p></div><div class="card"><h4>📝 Kertas Kerja</h4><p>Kertas kerja program dan aktiviti panitia.</p><a href="https://drive.google.com/file/d/1jQfZXRotPNJM19C52itEbmwvDMypWbOU/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Buka dokumen →</a></div><div class="card"><h4>📅 Jadual Instruksional SMKBM 2026</h4><p>Jadual instruksional SMK Bukit Merchu 2026.</p><a href="https://drive.google.com/file/d/1E500MbLm6qSx3Juj-O2GbclDpsj02fLT/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Buka dokumen →</a></div></div>
 <a class="desktop-back-dashboard" href="#dashboard" onclick="showPage('dashboard',document.querySelector('.nav a[href=\"#dashboard\"]')); return false;" aria-label="Kembali ke Dashboard">🏠 KEMBALI KE DASHBOARD</a>
 <a class="phone-back-dashboard-static" href="#dashboard" aria-label="Kembali ke Dashboard">🏠 KEMBALI KE DASHBOARD</a>
 </section>
 
-<section id="mesyuarat" class="page"><div class="section-title"><h3>📋 Mesyuarat Panitia</h3></div><div class="card"><p>Ruang untuk agenda, minit mesyuarat, tindakan susulan dan rekod kehadiran.</p></div>
-<a class="desktop-back-dashboard" href="#dashboard" onclick="showPage('dashboard',document.querySelector('.nav a[href=\"#dashboard\"]')); return false;" aria-label="Kembali ke Dashboard">🏠 KEMBALI KE DASHBOARD</a>
-<a class="phone-back-dashboard-static" href="#dashboard" aria-label="Kembali ke Dashboard">🏠 KEMBALI KE DASHBOARD</a>
-</section>
+<section id="mesyuarat" class="page"><div class="section-title"><h3>📋 Mesyuarat Panitia RBT 2026</h3><span>Surat jemputan &amp; minit mesyuarat</span></div><div class="cards meeting-docs-grid">
+<div class="card"><div class="bigico">1️⃣</div><h4>Mesyuarat Panitia Bil. 1/2026</h4><p>📄 Surat Jemputan &amp; 📝 Minit Mesyuarat Panitia Kali 1.</p><a href="https://drive.google.com/file/d/1eh_BZdv5WL9Ygo-nYtGfX8zH4fvWjOLH/view?usp=drive_link" target="_blank" rel="noopener noreferrer">🔗 Buka Dokumen Google Drive →</a></div>
+<div class="card"><div class="bigico">2️⃣</div><h4>Mesyuarat Panitia Bil. 2/2026</h4><p>📄 Surat Jemputan &amp; 📝 Minit Mesyuarat Panitia Kali 2.</p><a href="https://drive.google.com/file/d/1uJaLIPjN9lweYtIrfPYd5eBq6WvueN4x/view?usp=drive_link" target="_blank" rel="noopener noreferrer">🔗 Buka Dokumen Google Drive →</a></div>
+</div><div class="back-dashboard-wrap"><button class="back-dashboard" onclick="showPage('dashboard',document.querySelector('.nav a[href='#dashboard']')); location.hash='dashboard';">🏠 KEMBALI KE DASHBOARD</button></div></section>
 
 <section id="projek" class="page"><div class="heading"><h3>💡 Projek / Inovasi RBT</h3><span>Projek Tingkatan 1 • 2 • 3</span></div>
 <div class="quick">
