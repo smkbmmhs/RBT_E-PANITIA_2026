@@ -1354,5 +1354,45 @@ main{min-width:0;width:100%;max-width:100%;overflow-x:hidden;}
 })();
 </script>
 
+
+<script id="PHONE-DOKUMENTASI-MESYUARAT-FIX">
+(function(){
+  function isPhone(){ return window.matchMedia('(max-width:700px)').matches; }
+
+  document.addEventListener('click', function(e){
+    if(!isPhone()) return;
+
+    /* ONLY the "Buka Mesyuarat" card in Dokumentasi Panitia.
+       On phone, open the internal Mesyuarat module instead of any external document. */
+    var card = e.target.closest('#dokumen .doc-link-card');
+    if(!card) return;
+
+    e.preventDefault();
+    e.stopImmediatePropagation();
+
+    document.querySelectorAll('main .page').forEach(function(p){
+      p.classList.remove('active');
+      p.style.setProperty('display','none','important');
+    });
+
+    var page = document.getElementById('mesyuarat');
+    if(page){
+      page.classList.add('active');
+      page.style.setProperty('display','block','important');
+    }
+
+    document.body.classList.add('phone-module-open');
+
+    try{
+      history.pushState({phoneModule:'mesyuarat'},'', '#mesyuarat');
+    }catch(err){
+      location.hash='mesyuarat';
+    }
+
+    window.scrollTo({top:0,behavior:'smooth'});
+  }, true);
+})();
+</script>
+
 </body>
 </html>
