@@ -831,7 +831,7 @@ main{width:auto!important;max-width:none!important;min-width:0!important;}
 <section id="mesyuarat" class="page"><div class="section-title"><h3>📋 Mesyuarat Panitia RBT 2026</h3><span>Surat jemputan &amp; minit mesyuarat</span></div><div class="cards meeting-docs-grid">
 <div class="card"><div class="bigico">1️⃣</div><h4>Mesyuarat Panitia Bil. 1/2026</h4><p>📄 Surat Jemputan &amp; 📝 Minit Mesyuarat Panitia Kali 1.</p><a href="https://drive.google.com/file/d/1eh_BZdv5WL9Ygo-nYtGfX8zH4fvWjOLH/view?usp=drive_link" target="_blank" rel="noopener noreferrer">🔗 Buka Dokumen Google Drive →</a></div>
 <div class="card"><div class="bigico">2️⃣</div><h4>Mesyuarat Panitia Bil. 2/2026</h4><p>📄 Surat Jemputan &amp; 📝 Minit Mesyuarat Panitia Kali 2.</p><a href="https://drive.google.com/file/d/1uJaLIPjN9lweYtIrfPYd5eBq6WvueN4x/view?usp=drive_link" target="_blank" rel="noopener noreferrer">🔗 Buka Dokumen Google Drive →</a></div>
-</div><div class="back-dashboard-wrap"><button class="back-dashboard" onclick="showPage('dashboard',document.querySelector('.nav a[href='#dashboard']')); location.hash='dashboard';">🏠 KEMBALI KE DASHBOARD</button></div></section>
+</div><div class="back-dashboard-wrap"><a class="desktop-back-dashboard phone-back-dashboard-static" href="#dashboard" aria-label="Kembali ke Dashboard">🏠 KEMBALI KE DASHBOARD</a></div></section>
 
 <section id="projek" class="page"><div class="heading"><h3>💡 Projek / Inovasi RBT</h3><span>Projek Tingkatan 1 • 2 • 3</span></div>
 <div class="quick">
@@ -1188,10 +1188,15 @@ main{min-width:0;width:100%;max-width:100%;overflow-x:hidden;}
 
   function openPhoneModule(id,push){
     if(!isPhone()) return;
-    document.querySelectorAll('main .page').forEach(p=>p.classList.remove('active'));
+    const pages=document.querySelectorAll('main .page');
+    pages.forEach(p=>{
+      p.classList.remove('active');
+      p.style.setProperty('display','none','important');
+    });
     const page=document.getElementById(id);
     if(!page) return;
     page.classList.add('active');
+    page.style.setProperty('display','block','important');
     document.body.classList.toggle('phone-module-open',id!=='dashboard');
     if(push){
       try{ history.pushState({phoneModule:id},'', '#'+id); }catch(e){ location.hash=id; }
@@ -1248,13 +1253,80 @@ main{min-width:0;width:100%;max-width:100%;overflow-x:hidden;}
     if(!b) return;
     e.preventDefault();
     e.stopPropagation();
-    document.querySelectorAll('main .page').forEach(function(p){p.classList.remove('active');});
+    document.querySelectorAll('main .page').forEach(function(p){
+      p.classList.remove('active');
+      p.style.setProperty('display','none','important');
+    });
     var dash=document.getElementById('dashboard');
-    if(dash) dash.classList.add('active');
+    if(dash){
+      dash.classList.add('active');
+      dash.style.setProperty('display','block','important');
+    }
     document.body.classList.remove('phone-module-open');
-    history.replaceState(null,'','#dashboard');
+    try{ history.replaceState(null,'','#dashboard'); }catch(err){ location.hash='dashboard'; }
     window.scrollTo({top:0,behavior:'smooth'});
   },true);
+})();
+</script>
+
+
+<script id="PHONE-PAGE-VISIBILITY-FIX">
+(function(){
+  function isPhone(){ return window.matchMedia('(max-width:700px)').matches; }
+  function sync(){
+    if(!isPhone()) return;
+    var id=(location.hash||'#dashboard').slice(1)||'dashboard';
+    var pages=document.querySelectorAll('main .page');
+    pages.forEach(function(p){
+      p.classList.remove('active');
+      p.style.setProperty('display','none','important');
+    });
+    var page=document.getElementById(id) || document.getElementById('dashboard');
+    if(page){
+      page.classList.add('active');
+      page.style.setProperty('display','block','important');
+    }
+    document.body.classList.toggle('phone-module-open', !!page && page.id!=='dashboard');
+  }
+  window.addEventListener('pageshow',sync);
+  window.addEventListener('hashchange',sync);
+})();
+</script>
+
+
+<script id="PHONE-MESYUARAT-BACK-DASHBOARD-FIX">
+(function(){
+  document.addEventListener('click',function(e){
+    if(!window.matchMedia('(max-width:700px)').matches) return;
+    var b=e.target.closest('#mesyuarat .back-dashboard');
+    if(!b) return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    document.querySelectorAll('main .page').forEach(function(p){
+      p.classList.remove('active');
+      p.style.setProperty('display','none','important');
+    });
+    var dash=document.getElementById('dashboard');
+    if(dash){
+      dash.classList.add('active');
+      dash.style.setProperty('display','block','important');
+    }
+    document.body.classList.remove('phone-module-open');
+    try{ history.replaceState(null,'','#dashboard'); }catch(err){ location.hash='dashboard'; }
+    window.scrollTo({top:0,behavior:'smooth'});
+  },true);
+})();
+</script>
+
+
+<script id="MESYUARAT-BACK-DASHBOARD-FINAL-FIX">
+(function(){
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('#mesyuarat .back-dashboard');
+    if(!btn) return;
+    e.preventDefault();
+    window.location.hash = 'dashboard';
+  }, true);
 })();
 </script>
 
