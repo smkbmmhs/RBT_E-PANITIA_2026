@@ -629,6 +629,27 @@ main{width:auto!important;max-width:none!important;min-width:0!important;}
 .meeting-docs-grid .card a{display:inline-block;margin:6px 0 10px;font-weight:800;text-decoration:none;color:#5b21b6}
 @media(max-width:700px){.meeting-docs-grid{grid-template-columns:1fr}.meeting-docs-grid .card{padding:18px}.meeting-docs-grid .card a{font-size:14px}.doc-link-card{touch-action:manipulation}}
 </style>
+
+<style id="MESYUARAT-DESKTOP-BACK-FINAL">
+.back-dashboard-wrap{
+  display:block!important;
+  width:100%!important;
+  margin:8px 0 0!important;
+  clear:both!important;
+}
+@media(min-width:701px){
+  #mesyuarat .desktop-back-dashboard{
+    display:flex!important;
+    visibility:visible!important;
+    opacity:1!important;
+    margin:28px auto 10px!important;
+  }
+}
+@media(max-width:700px){
+  #mesyuarat .desktop-back-dashboard{display:none!important;}
+}
+</style>
+
 </head>
 <body>
 <div class="app">
@@ -831,7 +852,10 @@ main{width:auto!important;max-width:none!important;min-width:0!important;}
 <section id="mesyuarat" class="page"><div class="section-title"><h3>📋 Mesyuarat Panitia RBT 2026</h3><span>Surat jemputan &amp; minit mesyuarat</span></div><div class="cards meeting-docs-grid">
 <div class="card"><div class="bigico">1️⃣</div><h4>Mesyuarat Panitia Bil. 1/2026</h4><p>📄 Surat Jemputan &amp; 📝 Minit Mesyuarat Panitia Kali 1.</p><a href="https://drive.google.com/file/d/1eh_BZdv5WL9Ygo-nYtGfX8zH4fvWjOLH/view?usp=drive_link" target="_blank" rel="noopener noreferrer">🔗 Buka Dokumen Google Drive →</a></div>
 <div class="card"><div class="bigico">2️⃣</div><h4>Mesyuarat Panitia Bil. 2/2026</h4><p>📄 Surat Jemputan &amp; 📝 Minit Mesyuarat Panitia Kali 2.</p><a href="https://drive.google.com/file/d/1uJaLIPjN9lweYtIrfPYd5eBq6WvueN4x/view?usp=drive_link" target="_blank" rel="noopener noreferrer">🔗 Buka Dokumen Google Drive →</a></div>
-</div><div class="back-dashboard-wrap"><a class="desktop-back-dashboard phone-back-dashboard-static" href="#dashboard" aria-label="Kembali ke Dashboard">🏠 KEMBALI KE DASHBOARD</a></div></section>
+</div><div class="back-dashboard-wrap">
+<a class="desktop-back-dashboard" href="#dashboard" onclick="showPage('dashboard',document.querySelector('.nav a[href="#dashboard"]')); return false;" aria-label="Kembali ke Dashboard">🏠 KEMBALI KE DASHBOARD</a>
+<a class="phone-back-dashboard-static" href="#dashboard" aria-label="Kembali ke Dashboard">🏠 KEMBALI KE DASHBOARD</a>
+</div></section>
 
 <section id="projek" class="page"><div class="heading"><h3>💡 Projek / Inovasi RBT</h3><span>Projek Tingkatan 1 • 2 • 3</span></div>
 <div class="quick">
